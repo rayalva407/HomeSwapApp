@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_02_175603) do
+ActiveRecord::Schema.define(version: 2020_10_02_205500) do
 
   create_table "home_swaps", force: :cascade do |t|
     t.integer "home_id"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2020_10_02_175603) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
+    t.string "email"
+    t.string "password_digest"
   end
 
 end
