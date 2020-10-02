@@ -1,5 +1,9 @@
 <h1>Create a Profile</h1>
 
+<% @user.errors.full_messages.each do |m| %>
+  <li><%= m %></li>
+<% end %>
+<br>
 <%= form_for @user do |f| %>
   <%= f.label :name %> <br>
   <%= f.text_field :name %> <br><br>
@@ -13,5 +17,7 @@
   <%= f.label :password_confirmation, "Confirm Password" %><br>
   <%= f.password_field :password_confirmation %><br><br>
 
-  <%= f.submit "Sign Up" %>
+  <%= f.submit "Sign Up" %> <br><br>
+
+  <%= link_to 'Login', login_path %>
 <% end %>

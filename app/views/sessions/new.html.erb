@@ -2,10 +2,11 @@
 
 <%= form_tag '/login', method: :post do %>
   <%= label_tag :email %>
-  <%= text_field_tag :email %>
+  <%= text_field_tag :email %> <br><br>
 
   <%= label_tag :password %>
-  <%= password_field_tag :password %>
+  <%= password_field_tag :password %><br><br>
 
-  <%= submit_tag "Submit" %>
+  <%= submit_tag "Submit" %> <br><br>
+  <%= link_to 'Sign Up', new_user_path %>
 <% end %>
