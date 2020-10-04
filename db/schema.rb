@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_02_205500) do
+ActiveRecord::Schema.define(version: 2020_10_04_214927) do
 
   create_table "home_swaps", force: :cascade do |t|
     t.integer "home_id"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2020_10_02_205500) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
+    t.string "google_token"
+    t.string "google_refresh_token"
   end
 
 end
