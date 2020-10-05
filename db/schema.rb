@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 2020_10_02_205500) do
   create_table "home_swaps", force: :cascade do |t|
     t.integer "home_id"
     t.integer "swap_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
   end
 
   create_table "homes", force: :cascade do |t|
@@ -25,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_10_02_205500) do
   create_table "swaps", force: :cascade do |t|
     t.datetime "start_date"
     t.datetime "end_date"
+    t.string "location"
   end
 
   create_table "users", force: :cascade do |t|
