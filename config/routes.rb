@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get 'homes/new'
   resources :users
   resources :homes
+  resources :homes do
+    resources :swaps
+  end
   get 'welcome/start'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
