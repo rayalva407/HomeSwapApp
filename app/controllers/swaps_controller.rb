@@ -1,6 +1,6 @@
 class SwapsController < ApplicationController
   def new
-    binding.pry
+    @swap = Swap.new
   end
 
   def create

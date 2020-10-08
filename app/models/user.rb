@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_one :home
+  has_many :trips
+  has_many :homes, through: :trips
   has_secure_password
 
   validates :name, presence: true

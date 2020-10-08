@@ -1,6 +1,5 @@
 class Home < ApplicationRecord
-  belongs_to :user
-  has_many :home_swaps
-  has_many :swaps, through: :home_swaps
+  has_many :trips
+  has_many :users, through: :trips
   validates :address, presence: true
 end

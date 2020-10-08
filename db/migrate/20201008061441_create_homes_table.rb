@@ -1,8 +1,7 @@
 class CreateHomesTable < ActiveRecord::Migration[6.0]
   def change
-    create_table :homes do |t|
+    create_table :homes_tables do |t|
       t.string :address
-      t.integer :user_id
     end
   end
 end
