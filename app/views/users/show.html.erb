@@ -3,7 +3,4 @@
 
 
 <%= link_to 'Logout', logout_path %> <br><br>
-<%= link_to 'Add Your Home', new_home_path %> <br><br>
-<% if @user.home %>
-<%= link_to 'Show Your Home', home_path(@user.home) %><br><br>
-<% end %>
+<%= link_to 'Create a trip', new_trip_path %>

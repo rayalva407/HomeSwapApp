@@ -10,24 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_02_205500) do
-
-  create_table "home_swaps", force: :cascade do |t|
-    t.integer "home_id"
-    t.integer "swap_id"
-    t.datetime "start_date"
-    t.datetime "end_date"
-  end
+ActiveRecord::Schema.define(version: 2020_10_08_061840) do
 
   create_table "homes", force: :cascade do |t|
     t.string "address"
-    t.integer "user_id"
   end
 
-  create_table "swaps", force: :cascade do |t|
+  create_table "trips", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "home_id"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.string "location"
   end
 
   create_table "users", force: :cascade do |t|

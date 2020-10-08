@@ -1,0 +1,19 @@
+<h1>Create a Trip</h1>
+
+
+
+<%= form_for @trip do |f| %>
+  <%= f.label :user_id %>
+  <%= f.collection_select :user_id, User.all, :id, :name %>
+
+  <%= f.label :home_id %>
+  <%= f.collection_select :home_id, Home.all, :id, :address %>
+
+  <%= f.label :start_date %>
+  <%= f.date_field :start_date %>
+
+  <%= f.label :end_date %>
+  <%= f.date_field :end_date %>
+
+  <%= f.submit %>
+<% end %>

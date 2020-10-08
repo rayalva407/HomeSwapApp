@@ -19,6 +19,6 @@ class HomesController < ApplicationController
 
   private
   def home_params
-    params.require(:home).permit(:address, :user_id)
+    params.require(:home).permit(:address)
   end
 end

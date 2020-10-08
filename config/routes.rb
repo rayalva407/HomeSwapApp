@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
   get '/auth/google_oauth2/callback', to: "sessions#create_with_omniauth"
-  get 'homes/new'
   resources :users
   resources :homes
-  resources :homes do
-    resources :swaps
-  end
+  resources :trips
+
   get 'welcome/start'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

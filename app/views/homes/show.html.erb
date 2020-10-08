@@ -1,6 +1,0 @@
-<h1>Your Home</h1>
-
-<p><%= @home.address %> owned by <%= @home.user.name %></p>
-
-<%= link_to 'Profile', user_path(@home.user) %>
-<%= link_to 'Swap Your Home', new_home_swap_path(@home) %>
