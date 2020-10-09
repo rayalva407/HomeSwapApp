@@ -1,13 +1,15 @@
 <h1>Create a Trip</h1>
 
-
+<% @trip.errors.full_messages.each do |m| %>
+  <li><%= m %></li>
+<% end %>
 
 <%= form_for @trip do |f| %>
   <%= f.label :user_id %>
-  <%= f.collection_select :user_id, User.all, :id, :name %>
+  <%= f.collection_select :user_id, User.all, :id, :name, {include_blank: 'Select User'} %>
 
   <%= f.label :home_id %>
-  <%= f.collection_select :home_id, Home.all, :id, :address %>
+  <%= f.collection_select :home_id, Home.all, :id, :address, {include_blank: 'Select A Home'} %>
 
   <%= f.label :start_date %>
   <%= f.date_field :start_date %>

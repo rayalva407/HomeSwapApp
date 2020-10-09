@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   resources :homes
   resources :trips
 
+  resources :users do
+    resources :homes
+  end
+  
   get 'welcome/start'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

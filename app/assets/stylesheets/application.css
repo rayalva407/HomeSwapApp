@@ -16,8 +16,3 @@
 .field_with_errors input {
   border-color: red;
 }
-
-li {
-  font-weight: bold;
-  color: red;
-}
