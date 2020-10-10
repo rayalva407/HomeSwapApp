@@ -1,0 +1,9 @@
+<h1>Your Trips</h1>
+
+<% @trips.each do |trip| %>
+  <ul>
+    <li><%= trip.start_date.strftime('%m/%d/%Y') %> through <%= trip.end_date.strftime('%m/%d/%Y') %></li>
+  </ul>
+<% end %>
+
+<%= link_to 'Profile', user_path(@user) %>

@@ -3,3 +3,5 @@
 <h2>Thank You <%= @trip.user.name %>!</h2>
 <p>Your new trip is from <%= @trip.start_date %> to <%= @trip.end_date %>.</p>
 <p>The address of the home is <%= @trip.home.address %></p>
+
+<%= link_to 'Your Trips', user_trips_path(@trip.user) %>

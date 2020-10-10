@@ -9,16 +9,11 @@ class HomesController < ApplicationController
   end
 
   def create
-    @home = Home.new(home_params)
-    if @home.save
-      redirect_to home_path(@home)
-    else
-      render :new
-    end
+
   end
 
   private
   def home_params
-    params.require(:home).permit(:address)
+    params.require(:home).permit(:address, :user_id)
   end
 end

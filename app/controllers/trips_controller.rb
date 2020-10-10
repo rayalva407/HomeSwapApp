@@ -1,17 +1,25 @@
 class TripsController < ApplicationController
+  def index
+    @user = User.find_by(id: params[:user_id])
+    @trips = @user.trips
+  end
+
   def show
     @trip = Trip.find(params[:id])
   end
 
   def new
-    @trip = Trip.new
+    if params[:user_id]
+      @user = User.find_by(id: params[:user_id])
+      @trip = @user.trips.build
+    end
   end
 
   def create
-    # binding.pry
+    @user = User.find_by(id: params[:trip][:user_id])
     @trip = Trip.new(trip_params)
     if @trip.save
-      redirect_to trip_path(@trip)
+      redirect_to user_trip_path(@user, @trip)
     else
       render :new
     end

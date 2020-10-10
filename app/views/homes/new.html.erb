@@ -1,6 +1,13 @@
 <h1>New Home</h1>
 
+<% @home.errors.full_messages.each do |m| %>
+  <li><%= m %></li>
+<% end %>
+<br>
+
 <%= form_for @home do |f| %>
   <%= f.label :address %>
-  <%= f.text_field :address %>
+  <%= f.text_field :address %> <br><br>
+
+  <%= f.submit "Submit", disable_with: 'Submiting...' %>
 <% end %>
