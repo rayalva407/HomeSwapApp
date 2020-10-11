@@ -16,6 +16,7 @@ class TripsController < ApplicationController
   end
 
   def create
+    binding.pry
     @user = User.find_by(id: params[:trip][:user_id])
     @trip = Trip.new(trip_params)
     if @trip.save

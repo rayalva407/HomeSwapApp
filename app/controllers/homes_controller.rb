@@ -5,15 +5,19 @@ class HomesController < ApplicationController
   end
   
   def new
-    @home = Home.new
+      @home = Home.new
   end
 
   def create
-
+    @home = Home.new(home_params)
+    if @home.save
+      redirect_to home_path(@home)
+    end
   end
 
   private
   def home_params
     params.require(:home).permit(:address, :user_id)
   end
+
 end
