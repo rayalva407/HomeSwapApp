@@ -8,6 +8,6 @@
 
 <% @trips.each do |trip| %>
   <ul>
-    <li><%= trip.start_date.strftime('%m/%d/%Y') %> through <%= trip.end_date.strftime('%m/%d/%Y') %> <%= link_to 'Delete', trip_path(trip), method: :delete %> </li>
+    <li><%= trip.start_date.strftime('%m/%d/%Y') %> through <%= trip.end_date.strftime('%m/%d/%Y') %> <%= link_to 'Update', edit_trip_path(trip) %> <%= link_to 'Delete', trip_path(trip), method: :delete %> </li>
   </ul>
 <% end %>
