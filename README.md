@@ -1,24 +1,34 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##### Prerequisites
+Before starting make sure the following are installed on your system
 
-Things you may want to cover:
+-Ruby [2.6.1]
+-Rails [6.0.3.3]
 
-* Ruby version
+##### Repository
+Fork and clone this repository
+```
+git clone https://github.com/rayalva407/HomeSwapApp.git
+```
 
-* System dependencies
+##### Install gems in the Gemfile
+Run this command to install all the gems needed.
+```
+bundle install
+```
 
-* Configuration
+##### Setup the database
+Run the following commands to migrate the database and seed
+```
+rails db:migrate
+rails db:seed
+```
 
-* Database creation
+##### Start the server
+You can start the rails server by using this command
+```
+rails s
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Open your browser and visit the site at http://localhost:3000
