@@ -1,11 +1,12 @@
 class HomesController < ApplicationController
 
   def show
+    @user = current_user
     @home = Home.find(params[:id])
   end
   
   def new
-      @home = Home.new
+    @home = Home.new
   end
 
   def create

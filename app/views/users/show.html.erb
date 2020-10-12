@@ -12,4 +12,5 @@
 
 <%= link_to 'Logout', logout_path %> <br><br>
 <%= link_to 'Create a trip', new_user_trip_path(@user) %><br><br>
-<%= link_to 'Create a Home', new_home_path %>
+<%= link_to 'Post a Home', new_home_path %><br><br>
+<%= link_to 'Your Trips', user_trips_path(@user) %>

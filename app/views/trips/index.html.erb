@@ -1,9 +1,15 @@
 <h1>Your Trips</h1>
 
+<%= form_tag  trips_path, method: :get do %>
+  <%= label_tag "Filter by Date" %>
+  <%= select_tag :filter, options_for_select(["Future Trips", "Past Trips"]), include_blank: true %>
+  <%= submit_tag :filter %>
+<% end %>
+
 <% @trips.each do |trip| %>
   <ul>
     <li><%= trip.start_date.strftime('%m/%d/%Y') %> through <%= trip.end_date.strftime('%m/%d/%Y') %></li>
   </ul>
 <% end %>
 
-<%= link_to 'Profile', user_path(@user) %>
+  <%= link_to 'Profile', user_path(current_user) %>
