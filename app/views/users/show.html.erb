@@ -1,16 +1,9 @@
 <h1><%= @user.name %></h1>
 
-<h2><%= @user.name %>'s Homes</h2>
+<h2>Your Homes</h2>
 
 <% @user.homes.each do |h| %>
   <ul>
     <li><%= h.address %></li>
   </ul>
 <% end %>
-
-
-
-<%= link_to 'Logout', logout_path %> <br><br>
-<%= link_to 'Create a trip', new_user_trip_path(@user) %><br><br>
-<%= link_to 'Post a Home', new_home_path %><br><br>
-<%= link_to 'Your Trips', user_trips_path(@user) %>

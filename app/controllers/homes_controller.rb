@@ -6,6 +6,7 @@ class HomesController < ApplicationController
   end
   
   def new
+    @user = current_user
     @home = Home.new
   end
 
