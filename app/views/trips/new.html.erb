@@ -7,8 +7,6 @@
 
 
 <%= form_for @trip do |f| %>
-
-
   <%= f.label :home_id %>
   <%= f.collection_select :home_id, Home.all, :id, :address, {include_blank: 'Select A Home'} %>
 

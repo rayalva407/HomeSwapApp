@@ -14,6 +14,8 @@ class HomesController < ApplicationController
     @home = Home.new(home_params)
     if @home.save
       redirect_to home_path(@home)
+    else
+      render :new
     end
   end
 
