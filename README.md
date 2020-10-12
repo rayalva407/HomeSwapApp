@@ -3,8 +3,9 @@
 ##### Prerequisites
 Before starting make sure the following are installed on your system
 
--Ruby [2.6.1]
--Rails [6.0.3.3]
+* Ruby [2.6.1]
+* Rails [6.0.3.3]
+
 
 ##### Repository
 Fork and clone this repository
