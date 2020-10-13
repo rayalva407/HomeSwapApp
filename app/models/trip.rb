@@ -11,4 +11,8 @@ class Trip < ApplicationRecord
   def self.past_trips
     where("start_date < ?", Time.zone.today.beginning_of_day)
   end
+
+  def self.current_trips
+    where("start_date <= :today AND end_date >= :today", today: Time.zone.today.beginning_of_day)
+  end
 end

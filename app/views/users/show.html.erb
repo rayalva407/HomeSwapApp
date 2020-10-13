@@ -1,9 +1,9 @@
 <h1><%= @user.name %></h1>
 
-<h2>Your Homes</h2>
+<h2>Visited Homes</h2>
 
 <% @user.homes.each do |h| %>
   <ul>
-    <li><%= h.address %></li>
+    <li><h3><%= h.address %></h3></li>
   </ul>
 <% end %>

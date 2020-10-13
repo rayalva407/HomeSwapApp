@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   resources :users do
     resources :trips
   end
+
+  resources :homes do
+    resources :trips
+  end
   
   get 'welcome/start'
   get '/login' => 'sessions#new'

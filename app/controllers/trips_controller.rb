@@ -2,17 +2,44 @@ class TripsController < ApplicationController
   before_action :require_login
 
   def index
-    if !params[:filter].blank?
-      if params[:filter] == "Future Trips"
-        @user = current_user
-        @trips = Trip.future_trips
+    if params[:home_id]
+      if !params[:filter].blank?
+        if params[:filter] == "Future Trips"
+          @user = current_user
+          @home = Home.find(params[:home_id])
+          @trips = @user.homes[@home.id].trips.future_trips
+        elsif params[:filter] == "Past Trips"
+          @user = current_user
+          @home = Home.find(params[:home_id])
+          @trips = @user.homes[@home.id].trips.past_trips
+        elsif params[:filter] == "Current Trips"
+          @user = current_user
+          @home = Home.find(params[:home_id])
+          @trips = @user.homes[@home.id].trips.current_trips
+        end
       else
         @user = current_user
-        @trips = Trip.past_trips
+        @home = Home.find(params[:home_id])
+        @trips = @user.homes[@home.id].trips
       end
-    else
-      @user = current_user
-      @trips = @user.trips
+    end
+
+    if !params[:home_id]
+      if !params[:filter].blank?
+        if params[:filter] == "Future Trips"
+          @user = current_user
+          @trips = @user.trips.future_trips
+        elsif params[:filter] == "Past Trips"
+          @user = current_user
+          @trips = @user.trips.past_trips
+        elsif params[:filter] == "Current Trips"
+          @user = current_user
+          @trips = @user.trips.current_trips
+        end
+      else
+        @user = current_user
+        @trips = @user.trips
+      end
     end
   end
 
@@ -24,6 +51,9 @@ class TripsController < ApplicationController
     if params[:user_id]
       @user = current_user
       @trip = @user.trips.build
+    elsif params[:home_id]
+      @home = Home.find(params[:home_id])
+      @trip = @home.trips.build
     end
   end
 
