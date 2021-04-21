@@ -17,6 +17,11 @@
 
 <% @trips.each do |trip| %>
   <ul>
-    <li><h3>At <%= trip.home.address %> from <%= trip.start_date.strftime('%m/%d/%Y') %> through <%= trip.end_date.strftime('%m/%d/%Y') %> <%= link_to 'Update', edit_trip_path(trip) %> <%= link_to 'Delete', trip_path(trip), method: :delete %> </h3></li>
+    <li>
+    <h3>At <%= trip.home.address %> from <%= trip.start_date.strftime('%m/%d/%Y') %> through <%= trip.end_date.strftime('%m/%d/%Y') %>
+    <%= link_to 'Update', edit_user_trip_path(current_user, trip) %>
+    </h3>
+    
+    </li>
   </ul>
 <% end %>

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :trips
   end
   
-  get 'welcome/start'
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
